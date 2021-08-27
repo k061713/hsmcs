@@ -29,7 +29,7 @@
      *      20210526
      */
 
-    new BaseBean().writeLog(">>>>>>>>>>>>>>开始执行推广邮件操作<<<<<<<<<");
+    new BaseBean().writeLog(">>>>>>>>>>>>>>开始执行员工id/员工数量计算操作<<<<<<<<<");
     RecordSet rs = new RecordSet();
     RecordSet rs1 = new RecordSet();
     RecordSet rs2 = new RecordSet();
@@ -48,6 +48,7 @@
 
     String sql="";
     try {
+
         String spq[] = rymc.split("~");
         int sl=0;
         int sl1=0;
@@ -292,9 +293,9 @@
             gr.addAll(id4);
             gr.addAll(id5);
             new BaseBean().writeLog("当前执行的结果id："+gr+",id;"+gr1+",id;"+gr2+",id;"+gr3+",id;"+gr5);
-            sql5= "insert into formtable_main_804 (yjfsygsl) value ("+zsl+")";
+            //sql5= "insert into formtable_main_804 (yjfsygsl) value ("+zsl+")";
             //new BaseBean().writeLog("sql5："+sql5);
-            rs5.execute(sql5);
+            //rs5.execute(sql5);
         }
         json.put("sid", gr.toString());
         json.put("zsl", zsl);

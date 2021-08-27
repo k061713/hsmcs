@@ -54,19 +54,19 @@
             if (lx.equals("0")){
                 sql = "update uf_xsk set xsfpr ="+ryid + " WHERE id = '"+billid+"'" ; //分配权限
             }else {
-                sql = "update uf_xsk set xxs ="+ryid + ",xsfpr =null "+",fpzt =0"+",ssjg='"+ssjg+"',ssbm='"+ssbm+"' WHERE id = '"+billid+"'" ;//分配销售员
+                sql = "update uf_xsk set xxs ="+ryid + ",xsfpr =null "+",fpzt =0"+",ssjg='"+ssjg+"',ywgsjg='"+ssjg+"',ssbm='"+ssbm+"' WHERE id = '"+billid+"'" ;//分配销售员
             }
             new BaseBean().writeLog(">>>>>>>>>>>>>>执行1<<<<<<<<<"+sql);
             boolean jg=rs.execute(sql);
             if (jg){
                 new BaseBean().writeLog(">>>>>>>>>>>>>>执行2<<<<<<<<<"+sql1+",分配人："+ryid);
                 if (lx.equals("1")){
-		            rs1.execute(sql1);
-		        }
+                    rs1.execute(sql1);
+                }
                 ModeRightInfo ModeRightInfo = new ModeRightInfo();
                 ModeRightInfo.setNewRight(true);
-                ModeRightInfo.editModeDataShare(Integer.parseInt(ryid),22,Integer.parseInt(billid));
-		        json.put("code", 200);
+                ModeRightInfo.editModeDataShare(Integer.parseInt(ryid), 22,Integer.parseInt(billid));
+                json.put("code", 200);
                 json.put("msg","分配成功！");
             }else {
                 json.put("code", 201);

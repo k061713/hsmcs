@@ -28,7 +28,7 @@
     String xb= request.getParameter("xb");                //性别 1.女，2.男
     SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
     Date date1 = new Date();
-    new BaseBean().writeLog("系统当前时间"+df.format(date1));
+
     String mstime = request.getParameter("rzfzrqrymsj");//面试时间
     String datetime = request.getParameter("rzfzrqrymrq");//面试日期
     String yjzt = "面试通知";//邮件主题

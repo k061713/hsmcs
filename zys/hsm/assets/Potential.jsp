@@ -54,7 +54,7 @@
                 String czlx ="00008";
                 //sql2 ="INSERT INTO uf_zyjlb (khid,zysj,modedatacreatedate,modedatacreatetime,zylx1,fwjd,czlx,zyczz,ykhdm,xkhdm,ykhqc,yxsdb,xxsdb) VALUES ('"+id+"','"+df.format(date1)+"','"+modedatacreatedate+"','"+modedatacreatetime+"','"+6+"','"+11+"','"+czlx+"','"+users1.getUID()+"','"+dm+"','"+xdm+"','"+khqc+"','"+yxs+"','"+xxs+"')";
                 sql2 ="INSERT INTO uf_zyjlb (khid,zysj,formmodeid,modedatacreatedate,modedatacreatetime,uuid,zylx1,fwjd,czlx,zyczz,ykhdm,xkhdm,ykhqc,xkhqc,yxsdb,xxsdb) VALUES ('"+id+"','"+df.format(date1)+"','"+112+"','"+modedatacreatedate+"','"+modedatacreatetime+"','"+uuid+"','"+6+"','"+11+"','"+czlx+"','"+users1.getUID()+"','"+dm+"','"+xdm+"','"+khqc+"','"+khqc+"','"+yxs+"','"+ryid+"')";
-                sql = "update uf_khgl set xxs ="+ryid + ",ssbm ='"+ssbm+"' ,ssjg='"+ssjg+"',fwjd='"+11+"', khdm='"+xdm+"' WHERE id = "+id ; //分配潜在客户
+                sql = "update uf_khgl set xxs ="+ryid + ",ssbm ='"+ssbm+"' ,ssjg='"+ssjg+"',ywgsjg='"+ssjg+"',fwjd='"+11+"', khdm='"+xdm+"' WHERE id = "+id ; //分配潜在客户
                 sql3 ="SELECT COUNT(xxs) FROM uf_khgl WHERE xxs="+ryid;
                 rs3.execute(sql3);
                 while (rs3.next()){
@@ -77,13 +77,13 @@
                         json.put("msg","分配数超300！");
                     }
                 }
-		
+
             }else if(fwjd.equals("15")){
                 String czlx ="00010";
-		        String zdm ="F"+dm.substring(dm.lastIndexOf("-"));
+                String zdm ="F"+dm.substring(dm.lastIndexOf("-"));
                 //sql2 ="INSERT INTO uf_zyjlb (khid,zysj,modedatacreatedate,modedatacreatetime,zylx1,fwjd,czlx,zyczz,ykhdm,xkhdm,ykhqc,yxsdb,xxsdb) VALUES ('"+id+"','"+df.format(date1)+"','"+modedatacreatedate+"','"+modedatacreatetime+"','"+9+"','"+18+"','"+czlx+"','"+users1.getUID()+"','"+dm+"','"+xdm+"','"+khqc+"','"+yxs+"','"+xxs+"')";
                 sql2 ="INSERT INTO uf_zyjlb (khid,zysj,formmodeid,modedatacreatedate,modedatacreatetime,uuid,zylx1,fwjd,czlx,zyczz,ykhdm,xkhdm,ykhqc,xkhqc,yxsdb,xxsdb) VALUES ('"+id+"','"+df.format(date1)+"','"+112+"','"+modedatacreatedate+"','"+modedatacreatetime+"','"+uuid+"','"+9+"','"+18+"','"+czlx+"','"+users1.getUID()+"','"+dm+"','"+zdm+"','"+khqc+"','"+khqc+"','"+yxs+"','"+ryid+"')";
-                sql = "update uf_khgl set xxs="+ryid + ",ssbm ='"+ssbm+"' ,ssjg='"+ssjg+"',fwjd='"+18+"', khdm='"+zdm+"' WHERE id = "+id ; //分配潜在客户
+                sql = "update uf_khgl set xxs="+ryid + ",ssbm ='"+ssbm+"' ,ssjg='"+ssjg+"',ywgsjg='"+ssjg+"',fwjd='"+18+"', khdm='"+zdm+"' WHERE id = "+id ; //分配潜在客户
                 boolean bo =  rs.execute(sql);
                 if (bo){
                     rs2.execute(sql2);
@@ -118,7 +118,7 @@
 
 
 
-    return null;
-}
+        return null;
+    }
 
 %>
